@@ -1,12 +1,18 @@
 package com.ticket.demo.model;
-
-
 import jakarta.persistence.*;
 
+
+/*Entity: Marks a Java class as a JPA entity, indicating that it represents a table in the database. */
 @Entity
+
+/* Table: Specifies the name of the database table to which this entity is mapped.
+If you don't specify it, the table name will default to the class name.
+ */
 @Table(name = "tickets")
 public class Ticket {
+    /* ID: Designates the primary key field of the entity.*/
     @Id
+    //Generated Value: For auto incrementing the primary key value
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ticketNumber;
     private String trainNumber;
@@ -14,6 +20,22 @@ public class Ticket {
     private String seatNumber;
     private String ticketStatus;
 
+    public Ticket(Long ticketNumber, String trainNumber, Long passengerId, String seatNumber, String ticketStatus) {
+        this.ticketNumber = ticketNumber;
+        this.trainNumber = trainNumber;
+        this.passengerId = passengerId;
+        this.seatNumber = seatNumber;
+        this.ticketStatus = ticketStatus;
+    }
+
+    public Ticket() {
+
+    }
+
+    public Ticket(long l, String alice, String t201) {
+    }
+
+    //Getters and Setters
     public Long getTicketNumber() {
         return ticketNumber;
     }
@@ -64,5 +86,5 @@ public class Ticket {
                 ", ticketStatus='" + ticketStatus + '\'' +
                 '}';
     }
-// Getters and setters
+
 }

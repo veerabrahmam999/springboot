@@ -1,13 +1,38 @@
 package com.ticket.demo.model;
 
-public class TicketRequest {
-    private String trainNumber;
-    private String passengerName;
-    private Integer passengerAge;
-    private String passengerGender;
-    private String seatNumber;
+//This class is used for retrieving and setting data based on the http request
 
-    // Getters and setters
+
+public class TicketRequest {
+    private long ticketNUmber;
+    private String trainNumber;
+    private Long passengerId;
+    private String seatNumber;
+    private String ticketStatus;
+
+    public TicketRequest() {
+    }
+
+    public TicketRequest(long ticketNUmber, String trainNumber, Long passengerId, String seatNumber, String ticketStatus) {
+        this.ticketNUmber = ticketNUmber;
+        this.trainNumber = trainNumber;
+        this.passengerId = passengerId;
+        this.seatNumber = seatNumber;
+        this.ticketStatus = ticketStatus;
+    }
+
+
+
+    //Setters and Getters
+
+    public long getTicketNUmber() {
+        return ticketNUmber;
+    }
+
+    public void setTicketNUmber(long ticketNUmber) {
+        this.ticketNUmber = ticketNUmber;
+    }
+
     public String getTrainNumber() {
         return trainNumber;
     }
@@ -16,28 +41,12 @@ public class TicketRequest {
         this.trainNumber = trainNumber;
     }
 
-    public String getPassengerName() {
-        return passengerName;
+    public Long getPassengerId() {
+        return passengerId;
     }
 
-    public void setPassengerName(String passengerName) {
-        this.passengerName = passengerName;
-    }
-
-    public Integer getPassengerAge() {
-        return passengerAge;
-    }
-
-    public void setPassengerAge(Integer passengerAge) {
-        this.passengerAge = passengerAge;
-    }
-
-    public String getPassengerGender() {
-        return passengerGender;
-    }
-
-    public void setPassengerGender(String passengerGender) {
-        this.passengerGender = passengerGender;
+    public void setPassengerId(Long passengerId) {
+        this.passengerId = passengerId;
     }
 
     public String getSeatNumber() {
@@ -47,5 +56,20 @@ public class TicketRequest {
     public void setSeatNumber(String seatNumber) {
         this.seatNumber = seatNumber;
     }
+
+    public String getTicketStatus() {
+        return ticketStatus;
+    }
+
+    public void setTicketStatus(String ticketStatus) {
+        this.ticketStatus = ticketStatus;
+    }
+
+
+
+
+
+
+
 }
 

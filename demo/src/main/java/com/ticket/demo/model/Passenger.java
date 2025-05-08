@@ -1,23 +1,31 @@
 package com.ticket.demo.model;
 
+
+
+
 import jakarta.persistence.*;
+/*Entity: Marks a Java class as a JPA entity, indicating that it represents a table in the database. */
 
 @Entity
+/* Table: Specifies the name of the database table to which this entity is mapped.
+If you don't specify it, the table name will default to the class name.
+ */
 @Table(name="Passenger")
 public class Passenger {
 
+    /* ID: Designates the primary key field of the entity.*/
     @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long passengerId;
+        private int passengerId;
         private String name;
         private Integer age;
         private String gender;
 
-        public Long getPassengerId() {
+        public long getPassengerId() {
             return passengerId;
         }
 
-        public void setPassengerId(Long passengerId) {
+        public void setPassengerId(int passengerId) {
             this.passengerId = passengerId;
         }
 
